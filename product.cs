@@ -9,16 +9,38 @@ namespace Product_task
 {
     internal class product
     {
-        public string name="Case";
-        public int price=20;
-        public int count=10;
+        protected string name;
+        protected int price;
+        protected int count;
         public int Totallncome=0;
         public int alissayi;
-        
+        public string Name { get { return name; }
+            set {
+                if (string.IsNullOrEmpty(value))
+                { 
+                    Console.WriteLine("Meshul adi bos buraxila bilmez"); 
+                }
+                else
+                    name= value;
+            } }
+        public int Price { get { return price; } 
+            set { 
+            if(value<1)
+                    Console.WriteLine("Mehsulun qiymeti 1AZN den asagi ola bilmez");
+            else
+                    price = value;
+            } }
+        public int Count { get { return count; } set {
+            if(value<=0)
+                    Console.WriteLine("mehsul sayi 0dan asagi ola bilmez");
+            else
+                    count = value;  
+            } }  
         public void Sell()
         {
             if (this.alissayi<=this.count)
             {
+
                 this.count = this.count - this.alissayi;
                 this.Totallncome+=this.alissayi*this.price;
                 Console.WriteLine("Qiymet:"+this.Totallncome);
