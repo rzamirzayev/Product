@@ -9,7 +9,7 @@ namespace Product_task
 {
     internal class product
     {
-        public string name;
+        public string name="Case";
         public int price=20;
         public int count=10;
         public int Totallncome=0;
@@ -34,3 +34,4 @@ namespace Product_task
         
     }
 }
+
